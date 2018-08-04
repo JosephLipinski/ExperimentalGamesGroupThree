@@ -6,12 +6,16 @@ public class PlayerController : MonoBehaviour {
 
     public Camera _camera;
     public float moveSpeed;
-    public GameObject turret;
+    public GameObject turret, arrow;
+    ArrowStateMachine _ASM;
+    Vector3 originalPosition;
 
 
 	// Use this for initialization
 	void Start () {
         moveSpeed = 5f;
+        _ASM = arrow.GetComponent<ArrowStateMachine>();
+        originalPosition = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -36,7 +40,16 @@ public class PlayerController : MonoBehaviour {
             spawn.transform.position = this.transform.position + new Vector3(0f, 0f, 1f);
         }
 
+        if(Input.GetKeyDown(KeyCode.Mouse0) && _ASM._state == ArrowStateMachine.State.ready){
+            
+        }
+
+
 
 
 	}
+
+    public void RespawnPlayer(){
+        transform.position = originalPosition;
+    }
 }

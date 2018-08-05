@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 4232764840378526}
   - component: {fileID: 65400220430697338}
   - component: {fileID: 114941667888595930}
+  - component: {fileID: 114679557118056196}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -5482,6 +5483,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 15, z: 25}
   m_Center: {x: 0, y: 0, z: 11.5}
+--- !u!114 &114679557118056196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072895472121780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca9f62b60bf342c3b7f6c8fa1d9b9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turrets:
+  - {fileID: 1863780342669462}
+  - {fileID: 1900629882972002}
+  - {fileID: 1296115905980208}
+  upgradeCost: 00000000050000000f000000
+  upgradeText: {fileID: 0}
+  turret: {fileID: 114941667888595930}
+  currentIndex: 1
+  canUpgrade: 0
 --- !u!114 &114941667888595930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5493,7 +5514,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73717413b5034751970a221343c60a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  damageAmount: 1
   teeBall: {fileID: 1421562643226370, guid: e72f2685f90944976884be5d919ce6e9, type: 2}
   spawnPoint: {fileID: 1058456183243840}

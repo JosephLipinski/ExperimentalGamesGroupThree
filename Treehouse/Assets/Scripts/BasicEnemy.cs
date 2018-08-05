@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class BasicEnemy : MonoBehaviour
 {
     
     public GameObject treehouse;
-    public float moveSpeed = 4f;
+    public float moveSpeed;
     public float health;
     public int resourcesRefund;
     Turret turret;
@@ -15,6 +14,7 @@ public class BasicEnemy : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        moveSpeed = Random.Range(2f, 6f);
         treehouse = GameObject.Find("Treehouse/Tree Trunk");
     }
 
@@ -27,7 +27,7 @@ public class BasicEnemy : MonoBehaviour
 
     public void StartFiring(Turret _turret){
         turret = _turret;
-        turret.Fire(this.gameObject);
+        turret.CallFire(gameObject);
         StartCoroutine(KeepFiring());
     }
 
@@ -35,7 +35,7 @@ public class BasicEnemy : MonoBehaviour
         while (true){
             
             yield return new WaitForSeconds(1.0f);
-            turret.Fire(this.gameObject);
+            turret.CallFire(this.gameObject);
         }
     }
     public void TakeDamage(float damageAmount)

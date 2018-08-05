@@ -29,6 +29,11 @@ public class ResourceManager : MonoBehaviour {
         RefreshText();
     }
 
+    public void SpendResources(int _resource){
+        resources -= _resource;
+        RefreshText();
+    }
+
     void RefreshText(){
         myText.text = "Resources: " + resources.ToString();
     }

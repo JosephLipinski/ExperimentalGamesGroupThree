@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4889019735224964}
   - component: {fileID: 33630763210483678}
   - component: {fileID: 23697373313495348}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Giant Zombeaver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,11 +36,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4133153878495340}
-  - component: {fileID: 195293048329416742}
   - component: {fileID: 114429040214945932}
   - component: {fileID: 54644742696272704}
   - component: {fileID: 65417970874616286}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Giant Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -158,24 +157,3 @@ MonoBehaviour:
   moveSpeed: 3
   health: 8
   resourcesRefund: 6
---- !u!195 &195293048329416742
-NavMeshAgent:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1731356855987528}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5000001
-  m_Speed: 2
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4

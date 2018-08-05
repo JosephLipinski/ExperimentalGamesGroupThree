@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-
-    public GameObject basicEnemy, bigEnemy;
     public GameObject spawnPoint;
+    public float rotationAmount;
 
-    void Start(){
-        SpawnEnemies(basicEnemy);
-    }
-
-
-
-    void SpawnEnemies(GameObject enemy){
+    public void SpawnEnemies(GameObject enemy){
         GameObject spawned = Instantiate(enemy) as GameObject;
         spawned.transform.position = spawnPoint.transform.position;
+        spawned.transform.Rotate(Vector3.up, rotationAmount);
         spawned = null;
+
     }
+
+
 }

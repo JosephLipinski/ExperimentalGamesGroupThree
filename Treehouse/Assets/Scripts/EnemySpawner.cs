@@ -5,24 +5,18 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 
-    public GameObject enemy;
+    public GameObject basicEnemy, bigEnemy;
+    public GameObject spawnPoint;
 
-    // Use this for initialization
-    void Start()
-    {
-        StartCoroutine(SpawnEnemies());
+    void Start(){
+        SpawnEnemies(basicEnemy);
     }
 
-    IEnumerator SpawnEnemies()
-    {
-        while (true)
-        {
-            GameObject spawned = Instantiate(enemy) as GameObject;
-            spawned.transform.position = new Vector3(this.transform.position.x + 2f, transform.position.y, transform.position.z);
-            spawned = null;
 
-            yield return new WaitForSeconds(3.0f);
-        }
-        yield return null;
+
+    void SpawnEnemies(GameObject enemy){
+        GameObject spawned = Instantiate(enemy) as GameObject;
+        spawned.transform.position = spawnPoint.transform.position;
+        spawned = null;
     }
 }

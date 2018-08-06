@@ -42,10 +42,10 @@ public class PlayerController : MonoBehaviour {
         if(Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Mouse0)){
             if(arrowToFire == null){
                 arrowToFire = Instantiate(arrow);
-                //arrowToFire.transform.SetParent(GameObject.Find("Player/Arrow Position").transform);
+                arrowToFire.transform.SetParent(GameObject.Find("Player/Main Camera/Arrow Position").transform);
                 _arrow = arrowToFire.GetComponent<Arrow>();
                 arrowToFire.transform.localScale = new Vector3(0.4f, 0.4f, 0.6f);
-                arrowToFire.transform.position = GameObject.Find("Player/Arrow Position").transform.position;
+                arrowToFire.transform.position = GameObject.Find("Player/Main Camera/Arrow Position").transform.position;
                 arrowToFire.transform.Translate(Vector3.up * transform.rotation.y, Space.Self);
             } else {
                 _arrow.IncreaseThrust();

@@ -30,7 +30,7 @@ public class Arrow : MonoBehaviour
 
     public void FireArrow(){
         _rb.isKinematic = false;
-        Vector3 direction = transform.forward;
+        Vector3 direction = GameObject.Find("Player/Main Camera").transform.forward;
         direction.z = direction.z * thrust;
         _rb.AddForce(direction, ForceMode.Impulse);
         Debug.Log(direction);

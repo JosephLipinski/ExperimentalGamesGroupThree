@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
                 _arrow = arrowToFire.GetComponent<Arrow>();
                 arrowToFire.transform.localScale = new Vector3(0.4f, 0.4f, 0.6f);
                 arrowToFire.transform.position = GameObject.Find("Player/Arrow Position").transform.position;
-                arrowToFire.transform.Rotate(0f, transform.rotation.y, 0f);
+                arrowToFire.transform.Translate(Vector3.up * transform.rotation.y, Space.Self);
             } else {
                 _arrow.IncreaseThrust();
             }

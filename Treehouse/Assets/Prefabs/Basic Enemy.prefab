@@ -155,5 +155,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treehouse: {fileID: 0}
   moveSpeed: 6
-  health: 4
+  health: 6
   resourcesRefund: 2

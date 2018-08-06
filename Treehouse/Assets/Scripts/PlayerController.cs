@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour {
     public Camera _camera;
     public float moveSpeed;
     public GameObject turret, arrow;
+    Arrow _arrow;
+    GameObject arrowToFire;
     Vector3 originalPosition;
     Rigidbody _rb;
 
@@ -38,7 +40,31 @@ public class PlayerController : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Space)){
             _rb.AddForce(new Vector3(0f, 5f, 0f), ForceMode.Impulse);
         }
+        if(Input.GetKey(KeyCode.Return)){
+            if (arrowToFire == null)
+            {
+                arrowToFire = Instantiate(arrow);
+                arrowToFire.transform.position = GameObject.Find("Player/Arrow Position").transform.position;
+                arrowToFire.transform.parent = GameObject.Find("Player/Arrow Position").transform;
+                _arrow = arrowToFire.GetComponent<Arrow>();
+            }
+            else{
+                _arrow.IncreaseThrust();
+            }
+        }
+        if(Input.GetKeyUp(KeyCode.Return)){
+            if(arrowToFire != null){
+                arrowToFire.transform.parent = null;
+                arrowToFire.GetComponent<Arrow>().Fire();
+                StartCoroutine(KillArrow());
+            }
+        }
 	}
+
+    IEnumerator KillArrow(){
+        yield return new WaitForSeconds(5.0f);
+        Destroy(arrowToFire);
+    }
 
     public void RespawnPlayer(){
         transform.position = originalPosition;

@@ -24,7 +24,7 @@ public class ProperSpawner : MonoBehaviour {
 
     IEnumerator Track(){
         while(true){
-            if(time % 15 == 0){
+            if(time % 10 == 0){
                 difficulty += 1;
                 SpawnUnits();
             }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.755
   m_CustomReflection: {fileID: 8900000, guid: e4a0a86abaaeec044b3e0d040fd29c9e, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14523111, g: 0.4475682, b: 0.5866196, a: 0.755}
+  m_IndirectSpecularColor: {r: 0.14522582, g: 0.44786435, b: 0.58403134, a: 0.755}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1175,6 +1175,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2.1, z: 1}
   m_Children:
   - {fileID: 282840814}
+  - {fileID: 638201515}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1210,7 +1211,8 @@ MonoBehaviour:
   _camera: {fileID: 282840813}
   moveSpeed: 0
   turret: {fileID: 2020440092}
-  arrow: {fileID: 0}
+  arrow: {fileID: 1475249815745380, guid: de747d8eb97d240be81ac3f4a73dae6e, type: 2}
+  arrowToFire: {fileID: 0}
 --- !u!1 &468988595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2819,6 +2821,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 186882204c69a1446b5499aacdaac86c, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &638201514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 638201515}
+  m_Layer: 0
+  m_Name: Arrow Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &638201515
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 638201514}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.51, y: 0.141, z: 1.27}
+  m_LocalScale: {x: 1, y: 0.10132708, z: 3.8217845}
+  m_Children: []
+  m_Father: {fileID: 455511060}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &695104312
 GameObject:
   m_ObjectHideFlags: 0

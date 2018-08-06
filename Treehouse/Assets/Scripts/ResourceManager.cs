@@ -7,6 +7,7 @@ public class ResourceManager : MonoBehaviour {
 
     public static ResourceManager instance;
     public Text myText;
+    public Text shaText;
     public int resources = 0;
 
     // Use this for initialization
@@ -35,7 +36,8 @@ public class ResourceManager : MonoBehaviour {
     }
 
     void RefreshText(){
-        myText.text = "Resources: " + resources.ToString();
+        myText.text = resources.ToString();
+        shaText.text = resources.ToString();
     }
 	// Update is called once per frame
 	void Update () {

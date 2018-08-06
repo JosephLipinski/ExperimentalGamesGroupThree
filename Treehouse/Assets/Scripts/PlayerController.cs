@@ -39,18 +39,19 @@ public class PlayerController : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Space)){
             _rb.AddForce(new Vector3(0f, 5f, 0f), ForceMode.Impulse);
         }
-        if(Input.GetKey(KeyCode.Return)){
+        if(Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Mouse0)){
             if(arrowToFire == null){
                 arrowToFire = Instantiate(arrow);
-                arrowToFire.transform.SetParent(GameObject.Find("Player/Arrow Position").transform);
+                //arrowToFire.transform.SetParent(GameObject.Find("Player/Arrow Position").transform);
                 _arrow = arrowToFire.GetComponent<Arrow>();
-                _arrow.transform.localScale = new Vector3(0.4f, 0.4f, 0.6f);
-                _arrow.transform.position = GameObject.Find("Player/Arrow Position").transform.position;
+                arrowToFire.transform.localScale = new Vector3(0.4f, 0.4f, 0.6f);
+                arrowToFire.transform.position = GameObject.Find("Player/Arrow Position").transform.position;
+                arrowToFire.transform.Rotate(0f, transform.rotation.y, 0f);
             } else {
                 _arrow.IncreaseThrust();
             }
         }
-        if(Input.GetKeyUp(KeyCode.Return)){
+        if(Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Mouse0)){
             if(arrowToFire != null){
                 arrowToFire.transform.SetParent(null);
                 _arrow.FireArrow();

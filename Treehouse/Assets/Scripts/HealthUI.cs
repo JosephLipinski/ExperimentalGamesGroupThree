@@ -7,14 +7,24 @@ using UnityEngine.SceneManagement;
 public class HealthUI : MonoBehaviour {
 
     public Text myText;
-    public int treehouseHealth = 100;
-	// Use this for initialization
-	void Start () {
+    public int treehouseHealth = 15;
+    // Use this for initialization
+
+    [SerializeField]
+    private HPStat health;
+
+    void Start () {
         RefreshText();
 	}
+
+    private void Awake()
+    {
+        health.Initialize();
+    }
 	
     public void TakeDamage(int damageTaken){
         treehouseHealth -= damageTaken;
+        health.CurrentVal = treehouseHealth;
         RefreshText();
     }
 
@@ -28,6 +38,8 @@ public class HealthUI : MonoBehaviour {
             SceneManager.LoadScene("Game Over");
         }
     }
+
+
 
 
 }

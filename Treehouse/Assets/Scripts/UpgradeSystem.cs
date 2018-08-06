@@ -14,7 +14,7 @@ public class UpgradeSystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        upgradeText.SetActive(false);
 	}
 	
 	// Update is called once per frame

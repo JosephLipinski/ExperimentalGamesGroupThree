@@ -19,7 +19,7 @@ public class HealthDecrementer : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Enemy"){
-            _hUI.TakeDamage(1);
+            //_hUI.TakeDamage(1);
             Destroy(collision.gameObject);
         }
     }
